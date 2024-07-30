@@ -24,7 +24,7 @@ then
     sudo apt-get update -y
 
     # 安装 Docker 最新版本
-    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose -y
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose docker-compose-plugin -y
 else
     echo "Docker 已安装。"
 fi

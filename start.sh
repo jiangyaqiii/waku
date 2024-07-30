@@ -57,8 +57,8 @@ read -p "请输入你的api_key: " api_key
 read -p "请输入你的钱包私钥: " wallet_pubkey
 read -p "请输入你的rln密码，自定义即可: " rln_password
 sed -i 's|RLN_RELAY_ETH_CLIENT_ADDRESS=https://sepolia.infura.io/v3/[^ ]*|RLN_RELAY_ETH_CLIENT_ADDRESS=https://sepolia.infura.io/v3/$api_key|' .env
-sed -i 's|^ETH_TESTNET_KEY=.*|ETH_TESTNET_KEY=$wallet_pubkey|' .env
-sed -i 's|^RLN_RELAY_CRED_PASSWORD="[^"]*"|RLN_RELAY_CRED_PASSWORD="$rln_password"|' .env
+sed -i "s|^ETH_TESTNET_KEY=.*|ETH_TESTNET_KEY=$wallet_pubkey|" .env
+sed -i "s|^RLN_RELAY_CRED_PASSWORD=\"my_secure_keystore_password\"|RLN_RELAY_CRED_PASSWORD=\"$rln_password\"|g" .env
 
 echo ".env 文件编辑完成。"
 

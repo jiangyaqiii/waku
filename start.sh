@@ -74,3 +74,6 @@ docker-compose up -d
 
 echo "Docker Compose 服务启动完成。"
 echo "waku启动完成。"
+
+cd
+rm start.sh
